@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Ajout DVD</title>
+</head>
+<body>
+        <h1>Création DVD</h1>
+        <a href="/biblio_media/">Retour</a>
+        <section>
+                <h2>Ajout un dvd</h2>
+                <form action="" method="post" novalidate>
+                        {% csrf_token %}
+                        {{ creationdvd }}
+                        <input type="submit" value="Envoyer">
+                </form> 
+        </section> 
+</body>
+</html>

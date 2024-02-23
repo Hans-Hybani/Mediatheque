@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Creer un emprunt</title>
+</head>
+<body>
+        <form method="POST" action="{% url 'attribuer_emprunt_dvd' dvd_id=dvd_id %}">
+                {% csrf_token %}
+                <select name="emprunteur">
+                    {% for emprunteur in emprunteurs %}
+                        <option value="{{ emprunteur.id }}">{{ emprunteur.nom }}</option>
+                    {% endfor %}
+                </select>
+                <input type="hidden" name="media_id" value="{{ media_id }}">
+                <button type="submit">Attribuer</button>
+        </form>
+</body>
+</html>

@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Média</title>
+</head>
+<body>
+        <h1 class="media_title">Média</h1>
+        <section>
+            <h2>Option :</h2>
+            <a href="/accueil_bibliotecaire/">Accueil</a>
+            <div><br>
+                <a href="/ajoutlivre/">Ajouter un livre</a><br><br>
+                <a href="/ajoutdvd/">Ajouter un dvd</a><br><br>
+                <a href="/ajoutcd/">Ajouter un cd</a><br><br>
+                <a href="/ajoutjeu/">Ajouter un jeu</a><br><br>
+                <a href="/emprunt/">Liste des Emprunt</a>
+            </div>
+        </section>
+        <section>
+                <h2>Livre</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Auteur</th>
+                            <th>DateEmprunt</th>
+                            <th>Disponible</th>
+                            <th colspan="2" id="mid">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for livree in livres %}
+                        <tr>
+                            <td>{{livree.id}}</td>
+                            <td>{{livree.name}}</td>
+                            <td>{{livree.auteur}}</td>
+                            <td>{{livree.dateEmprunt}}</td>
+                            <td>{{livree.disponible}}</td>
+                            <td>
+                                {% if livree.disponible %}
+                                <a href="/selection_emprunteur_livre/{{ livree.id }}"><button id="up">Emprunter</button></a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% endfor %} 
+                    </tbody>        
+                </table>           
+        </section>
+        <section>
+                <h2>dvd</h2>
+                <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Réaliateur</th>
+                                <th>DateEmprunt</th>
+                                <th>Disponible</th>
+                                <th colspan="2" id="mid">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dvvd in dvdd %}
+                            <tr>
+                                <td>{{dvvd.id}}</td>
+                                <td>{{dvvd.name}}</td>
+                                <td>{{dvvd.realisateur}}</td>
+                                <td>{{dvvd.dateEmprunt}}</td>
+                                <td>{{dvvd.disponible}}</td>
+                                <td>
+                                    {% if dvvd.disponible %}
+                                    <a href="/selection_emprunteur_dvd/{{ dvvd.id }}"><button id="up">Emprunter</button></a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                </table>            
+        </section>
+        <section>
+                <h2>cd</h2>
+                <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Artiste</th>
+                                <th>DateEmprunt</th>
+                                <th>Disponible</th>
+                                <th colspan="2" id="mid">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for ccd in cdd %}
+                            <tr>
+                                <td>{{ccd.id}}</td>
+                                <td>{{ccd.name}}</td>
+                                <td>{{ccd.artiste}}</td>
+                                <td>{{ccd.dateEmprunt}}</td>
+                                <td>{{ccd.disponible}}</td>
+                                <td>
+                                    {% if ccd.disponible %}
+                                    <a href="/selection_emprunteur_cd/{{ ccd.id }}"><button id="up">Emprunter</button></a>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                </table>            
+        </section>
+        <section>
+                <h2>jeux</h2>
+                <table>
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Créateur</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for jeux in jeu %}
+                            <tr>
+                                <td>{{jeux.id}}</td>
+                                <td>{{jeux.name}}</td>
+                                <td>{{jeux.createur}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                </table>            
+        </section>
+</body>
+</html>

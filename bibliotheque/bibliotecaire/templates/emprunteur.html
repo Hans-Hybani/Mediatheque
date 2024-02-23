@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Liste des Emprunteurs</title>
+</head>
+<body>
+    <h1>Liste des Emprunteurs</h1>
+    <a href="/retourbibliomedia/">Retour</a>
+    <ul>
+        {% for emprunteur in emprunteurs %}
+            <li>{{ emprunteur.nom }}</li>
+            <ul>
+                {% for livre in emprunteur.livre_set.all %}
+                    <li>{{ livre.name }}
+                {% endfor %}
+                {% for dvd in emprunteur.dvd_set.all %}
+                    <li>{{ dvd.name }}
+                {% endfor %}
+                {% for cd in emprunteur.cd_set.all %}
+                    <li>{{ cd.name }}
+                {% endfor %}
+            </ul>
+        {% endfor %}    
+    </ul>        
+</body>
+</html>

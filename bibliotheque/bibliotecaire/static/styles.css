@@ -1,0 +1,43 @@
+.titre{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(37, 167, 124);
+        color: antiquewhite;
+        align-items: center;
+}
+a{
+        text-decoration: none;
+}
+.bloc__option{
+        display: flex;
+        justify-content: space-around;
+}
+.bloc__option div{
+        width: 400px;
+        height: 150px;
+        background-color:rgb(37, 167, 124);
+        box-shadow: 1px 1px 4px 1px rgba(76, 75, 75, 0.772);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 2em;
+        color: antiquewhite;
+}
+.media_title{
+        display: flex;
+        justify-content: center;
+        background-color: rgb(37, 167, 124);
+        color: antiquewhite;
+        align-items: center;        
+}
+td{
+        border: solid 1px;
+        height: 100px;
+        width: auto;
+        padding: 5px;
+}
+.retour{
+        background-color: red;
+}

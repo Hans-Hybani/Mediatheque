@@ -1,0 +1,29 @@
+{% load static %}
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Bibliotécaire</title>
+</head>
+<body>
+        <section class="titre">
+                <h1>Médiatheque</h1>
+        </section>
+        <section class="option">
+                <h2>Connectez vous :</h2>
+                <div class="bloc__option">
+                        <a href="/bibliotheque/login/">
+                                <div class="membre">
+                                        <p>Bibliotécaire</p>
+                                </div>
+                        </a>
+                        <a href="/membre/login/">
+                                <div class="membre">
+                                        <p>Membre</p>
+                                </div>
+                        </a>
+                </div>
+        </section>
+</body>
+</html>

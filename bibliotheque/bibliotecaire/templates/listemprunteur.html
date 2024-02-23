@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static '/styles.css' %}" />
+        <title>Emprunt</title>
+</head>
+<body>
+        <h1 class="media_title">Liste des emprunteurs</h1>
+        <section>
+            <a href="/accueil_bibliotecaire/">Accueil</a><br>
+            <a href="/ajout_Emprunt/">Creer un emprunteur</a>
+        </section>
+        <section>
+                <h2>Emprunteur</h2>
+                <table>
+                    <thead>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Bloqué</th>
+                        <th>livre</th>
+                        <th colspan="2" id="mid">Action</th>
+                    </thead>
+                    {% for emprunt in emprun %}
+                    <tr>
+                        <td>{{emprunt.id}}</td>
+                        <td>{{emprunt.nom}}</td>
+                        <td>{{emprunt.bloque}}</td>
+                        <td>
+                            <a href="/modifier_emprunteur/{{emprunt.id}}"><button id="up">update</button></a>
+                        </td>
+                        <td>
+                            <a href="/delete/{{emprunt.id}}"><button id="del">delete</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <br><br>
+            </div>
+        </section>
+</body>
+</html>
