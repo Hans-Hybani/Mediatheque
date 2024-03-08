@@ -6,7 +6,7 @@ from bibliotecaire.models import jeuDePlateau
 from bibliotecaire.models import emprunteur
 from datetime import datetime
 from django.urls import reverse
-from django.contrib.auth.models import User
+
 
 class MenuBibliothequeTestCase(TestCase):
     def setUp(self):
