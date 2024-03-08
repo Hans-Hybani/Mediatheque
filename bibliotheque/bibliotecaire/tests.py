@@ -7,7 +7,6 @@ from bibliotecaire.models import emprunteur
 from datetime import datetime
 from django.urls import reverse
 
-
 class MenuBibliothequeTestCase(TestCase):
     def setUp(self):
         # Création des données de test
