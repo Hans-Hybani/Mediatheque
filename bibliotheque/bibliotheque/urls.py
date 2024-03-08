@@ -21,8 +21,8 @@ from membre import views as membre_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', bibliotecaire_views.menu_bibliotheque),
-    path('menu_bibliotheque/', bibliotecaire_views.menu_bibliotheque),
+    path('', bibliotecaire_views.menu_bibliotheque, name='index'),
+    path('menu_bibliotheque/', bibliotecaire_views.menu_bibliotheque, name='menu_bibliotheque'),
     path('biblio_media/', bibliotecaire_views.media),
     path('membre_media/', membre_views.media),
     path('ajoutlivre/', bibliotecaire_views.ajoutLivre),

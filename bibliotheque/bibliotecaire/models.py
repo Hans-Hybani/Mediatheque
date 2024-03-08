@@ -24,9 +24,10 @@ class jeuDePlateau(models.Model):
     createur = models.CharField(max_length=45)
 
 class emprunteur(models.Model):
+    #l'utilisation de la nommenclature emprunteur au lieu de Membre m'a juste aidé pour poursuivre ma logique d'emprun de média/ choix personnel
     nom = models.CharField(max_length=45)
     bloque = models.BooleanField(default=False)
     nb_emprunts = models.IntegerField(default=0)
-
+    
     def __str__(self):
         return self.nom

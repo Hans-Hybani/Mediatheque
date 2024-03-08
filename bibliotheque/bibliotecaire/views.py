@@ -243,7 +243,6 @@ def emprunt_voir(request):
     context = {'emprunteurs': emprunteurs}
     return render(request, './emprunteur.html', context)
 
-
 def bibliotheque_login(request):
     if request.method == 'POST':
         form = BibliothequeLoginForm(request.POST)
@@ -281,8 +280,8 @@ def membre_login(request):
                 user = authenticate(username=username, password=password)
                 if user is not None:
                     login(request, user)
-                return redirect('/membre_media/')  # Redirection vers la page des membres
-            # Si les informations d'identification ne correspondent pas, affichez un message d'erreur
+                return redirect('/membre_media/') 
+            # Si les informations d'identification ne correspondent pas, on affiche message d'erreur
             else:
                 form.add_error(None, "Nom d'utilisateur ou mot de passe incorrect.")
     else:
@@ -295,12 +294,3 @@ def acceuilBibliotecaire(request):
 def retourbibliomedia(request):
     return redirect('/biblio_media/')
 
-
-def menuBibliotheque() :
-        print("c'est le menu de l'application des bibliothéquaire")
-
-def menu():
-        print("menu")
-
-if __name__ == '__main__':
-        menu()
